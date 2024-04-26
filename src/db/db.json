@@ -1,5 +1,312 @@
 {
     "movies": [
-    
+    {
+        "id":"1",
+        "imdbID": "tt2015381",
+        "Title": "Guardians of the Galaxy Vol. 2",
+        "Year": "2017",
+        "Rated": "PG-13",
+        "Released": "05 May 2017",
+        "Runtime": "136 min",
+        "Genre": "Action, Adventure, Comedy",
+        "Director": "James Gunn",
+        "Writer": "James Gunn, Dan Abnett, Andy Lanning",
+        "Actors": "Chris Pratt, Zoe Saldana, Dave Bautista",
+        "Plot": "The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father, the ambitious celestial being Ego.",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "Nominated for 1 Oscar. 15 wins & 60 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "7.6/10"
+            },
+            {
+                "Source": "Rotten Tomatoes",
+                "Value": "85%"
+            },
+            {
+                "Source": "Metacritic",
+                "Value": "67/100"
+            }
+        ],
+        "Metascore": "67",
+        "imdbRating": "7.6",
+        "imdbVotes": "757,026",
+        "imdbimdbID": "tt3896198",
+        "Type": "movie",
+        "DVD": "10 Jul 2017",
+        "BoxOffice": "$389,813,101",
+        "Production": "N/A",
+        "Website": "N/A",
+        "Response": "True"
+    },
+    {
+        "id":"2",
+        "imdbID": "tt2015380",
+        "Title": "Guardians of the Galaxy",
+        "Year": "2014",
+        "Rated": "PG-13",
+        "Released": "01 Aug 2014",
+        "Runtime": "121 min",
+        "Genre": "Action, Adventure, Comedy",
+        "Director": "James Gunn",
+        "Writer": "James Gunn, Nicole Perlman, Dan Abnett",
+        "Actors": "Chris Pratt, Bradley Cooper, Vin Diesel",
+        "Plot": "A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "Nominated for 1 Oscar. 20 wins & 53 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTAwMjU5OTgxNjZeQTJeQWpwZ15BbWU4MDUxNDYxODEx._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "7.9/10"
+            },
+            {
+                "Source": "Rotten Tomatoes",
+                "Value": "91%"
+            },
+            {
+                "Source": "Metacritic",
+                "Value": "76/100"
+            }
+        ],
+        "Metascore": "76",
+        "imdbRating": "7.9",
+        "imdbVotes": "1,048,955",
+        "imdbimdbID": "tt2015381",
+        "Type": "movie",
+        "DVD": "19 Aug 2014",
+        "BoxOffice": "$389,813,101",
+        "Production": "N/A",
+        "Website": "N/A",
+        "Response": "True"
+    },
+    {
+        "id":"3",
+        "imdbID": "tt0095016",
+        "Title": "Die Hard",
+        "Year": "1988",
+        "Rated": "R",
+        "Released": "13 Jul 1988",
+        "Runtime": "132 min",
+        "Genre": "Action, Thriller",
+        "Director": "Renny Harlin",
+        "Writer": "John McTiernan, Renny Harlin",
+        "Actors": "Bruce Willis, Bonnie Bedelia, Alan Rickman",
+        "Plot": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza prison.",
+        "Language": "English, German",
+        "Country": "United States",
+        "Awards": "Won 4 Oscars. 22 wins & 30 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZjRlNDUxZjAtOGQ4OC00OTNlLTgxNmQtYTBmMDgwZmNmNjkxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.2/10"
+            },
+            {
+                "Source": "Rotten Tomatoes",
+                "Value": "91%"
+            },
+            {
+                "Source": "Metacritic",
+                "Value": "72/100"
+            }
+        ],
+        "Metascore": "72",
+        "imdbRating": "8.2",
+        "imdbVotes": "1,081,367",
+        "imdbimdbID": "tt0095016",
+        "Type": "movie",
+        "DVD": "09 Aug 1988",
+        "BoxOffice": "$389,813,101",
+        "Production": "N/A",
+        "Website": "N/A",
+        "Response": "True"
+    },
+    {
+        "id":"4",
+        "imdbID": "tt0133093",
+        "Title": "The Matrix",
+        "Year": "1999",
+        "Rated": "R",
+        "Released": "31 Mar 1999",
+        "Runtime": "136 min",
+        "Genre": "Action, Sci-Fi",
+        "Director": "Lana Wachowski, Lilly Wachowski",
+        "Writer": "Lana Wachowski, Lilly Wachowski",
+        "Actors": "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
+        "Plot": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+        "Language": "English, Spanish",
+        "Country": "United States",
+        "Awards": "Won 1 Oscar. 19 wins & 26 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.7/10"
+            },
+            {
+                "Source": "Rotten Tomatoes",
+                "Value": "91%"
+            },
+            {
+                "Source": "Metacritic",
+                "Value": "73/100"
+            }
+        ],
+        "Metascore": "73",
+        "imdbRating": "8.7",
+        "imdbVotes": "1,300,692",
+        "imdbimdbID": "tt0133093",
+        "Type": "movie",
+        "DVD": "10 Jul 1999",
+        "BoxOffice": "$389,813,101",
+        "Production": "N/A",
+        "Website": "N/A",
+        "Response": "True"
+    },
+    { 
+        "id":"5",
+        "imdbID": "tt0120586",
+        "Title": "American History X",
+        "Year": "1998",
+        "Rated": "R",
+        "Released": "26 Jul 1998",
+        "Runtime": "119 min",
+        "Genre": "Drama",
+        "Director": "Tony Kaye",
+        "Writer": "Edward Norton, Ron Kovic, Tony Kaye",
+        "Actors": "Edward Norton, Jennifer Jason Leigh, Bruce Davison",
+        "Plot": "A working-class African-American father and his pioneer sister struggle to survive in the American South during the Great Depression.",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "Won 1 Oscar. 19 wins & 26 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZTJhN2FkYWEtMGI0My00YWM4LWI2MjAtM2UwNjY4MTI2ZTQyXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.5/10"
+            },
+            {
+                "Source": "Rotten Tomatoes",
+                "Value": "91%"
+            },
+            {
+                "Source": "Metacritic",
+                "Value": "69/100"
+            }
+        ],
+        "Metascore": "69",
+        "imdbRating": "8.5",
+        "imdbVotes": "1,110,853",
+        "imdbimdbID": "tt0169547",
+        "Type": "movie",
+        "DVD": "30 Aug 1998",
+        "BoxOffice": "$389,813,101",
+        "Production": "N/A",
+        "Website": "N/A",
+        "Response": "True"
+    },
+    {
+        "id":"6",
+        "imdbID": "tt0169547",
+            "Title": "American Beauty",
+            "Year": "1999",
+            "Rated": "R",
+            "Released": "15 Dec 1999",
+            "Runtime": "122 min",
+            "Genre": "Drama",
+            "Director": "Sam Mendes",
+            "Writer": "Rob Reiner, David O. Russell",
+            "Actors": "Kevin Spacey, Annette Bening, Thora Birch",
+            "Plot": "A sexually frustrated, underachieving actor and his stunt double strive to achieve fame and success in the years leading up to the NSYNC New Year's Eve Party.",
+            "Language": "English",
+            "Country": "United States",
+            "Awards": "Won 1 Oscar. 19 wins & 26 nominations total",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "8.4/10"
+                },
+                {
+                    "Source": "Rotten Tomatoes",
+                    "Value": "91%"
+                },
+                {
+                    "Source": "Metacritic",
+                    "Value": "69/100"
+                }
+            ],
+            "Metascore": "69",
+            "imdbRating": "8.4",
+            "imdbVotes": "1,110,853",
+            "imdbimdbID": "tt0169547",
+            "Type": "movie",
+            "DVD": "30 Aug 1998",
+            "BoxOffice": "$389,813,101",
+            "Production": "N/A",
+            "Website": "N/A",
+            "Response": "True"
+    },
+    {
+        "id":"7",
+        "Title": "American Psycho",
+        "Year": "2000",
+        "imdbID": "tt0144084",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg"
+    },
+    {
+        "id":"8",
+        "Title": "American Sniper",
+        "Year": "2014",
+        "imdbID": "tt2179136",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg"
+    },
+    {
+        "id": "9",
+        "Title": "American Pie",
+        "Year": "1999",
+        "imdbID": "tt0163651",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg"
+    },
+    {
+        "id": "10",
+        "Title": "American Gangster",
+        "Year": "2007",
+        "imdbID": "tt0765429",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg"
+    },
+    {
+        "id": "11",
+        "Title": "American Hustle",
+        "Year": "2013",
+        "imdbID": "tt1800241",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg"
+    },
+    {
+        "id": "12",
+        "Title": "American Made",
+        "Year": "2017",
+        "imdbID": "tt3532216",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg"
+    },
+    {
+        "id": "14",
+        "Title": "American Pie 2",
+        "Year": "2001",
+        "imdbID": "tt0211915",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg"
+    }
 ]
 }

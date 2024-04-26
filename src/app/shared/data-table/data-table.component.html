@@ -2,10 +2,11 @@
   <table class="border w-full shadow-base text-sm text-left rtl:text-right text-gray-500">
     <thead class="text-xs text-gray-700 uppercase bg-bg sticky top-0">
       <tr>
-        <th *ngFor="let header of tableHeaders" [key]="header.key" scope="col" class="px-6 py-3">
-          {{header.label}}
-          <app-sort-icon *ngIf="header.sortable"></app-sort-icon>
-        </th>
+      <th *ngFor="let header of tableHeaders" [key]="header.key" scope="col" class="px-6 py-3" [appSort]="tableData"  data-order="desc" data-name="Title"
+        >
+        {{header.label}}
+        <app-sort-icon *ngIf="header.sortable"></app-sort-icon>
+      </th>
       </tr>
     </thead>
     <tbody class="h-40 overflow-y-auto">
@@ -29,6 +30,7 @@
           </ng-container>
         </tr>
       </ng-container>
+      
     <ng-template #noData>
       <tr>
           <td colspan="{{tableHeaders.length}}">

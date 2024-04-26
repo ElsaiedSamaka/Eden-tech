@@ -8,9 +8,10 @@ import { SortIconComponent } from './sort-icon/sort-icon.component';
 import { ToastComponent } from './toast/toast.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { TableFooterComponent } from './data-table/table-footer/table-footer.component';
+import { MyCommonModule } from 'src/utils/directives/my-common.module';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule,MyCommonModule, RouterModule, ReactiveFormsModule],
   declarations: [
     InputComponent,
     SortIconComponent,
