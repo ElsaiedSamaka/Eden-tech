@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detailed',
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailedComponent implements OnInit {
   movieDetails: any = null;
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,private router:Router) {}
 
   ngOnInit() {
     this.getMovie();
@@ -18,5 +18,8 @@ export class DetailedComponent implements OnInit {
     this.route.data.subscribe((data:any) => {
      this.movieDetails = data.movie
     });
+  }
+  navigateBack() {
+    this.router.navigate(['/']);
   }
 }
