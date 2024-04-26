@@ -10,6 +10,15 @@ oUsers can set how many results appear per page in search.
 osearch results should show the movie poster as thumbnail.
 Users should be able to view the details for one of the movies from the search results.
 
+### Technical Details
+Check the wireframe at the bottom of the document
+Use https://www.omdbapi.com/ as your backend.
+oRegister for free api key through https://www.omdbapi.com/apikey.aspx
+You will receive email with API_KEY to use with your requests
+oTo search for movies by title, use https://www.omdbapi.com/?s=<SEARCH_KEYWORD>&apikey=<API_KEY>
+oTo view a movie details, use https://www.omdbapi.com/?i=<IMDB_ID>&apikey=<API_KEY>
+IMDB_ID is returned in the search API response for each movie.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
