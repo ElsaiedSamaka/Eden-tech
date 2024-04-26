@@ -9,24 +9,45 @@
       </tr>
     </thead>
     <tbody class="h-40 overflow-y-auto">
-      <tr *ngFor="let item of tableData"
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer hover:bg-bg dark:hover:bg-gray-600">
-        <ng-container *ngFor="let header of tableHeaders">
-          <ng-container [ngSwitch]="header.img">
-            <td *ngSwitchCase="true" class="px-6 py-4">
-              <img class="w-10 h-10 rounded-full" src="{{item[header.key]}}" alt="{{item[header.key]}}">
-            </td>
-            <td *ngSwitchCase="false" class="px-6 py-4">
-              {{ item[header.key] }}
-            </td>
-            <td *ngSwitchDefault class="px-6 py-4">
-              <a [routerLink]="item.id" class="text-blue-600 hover:underline dark:text-blue-500">
-                {{ item[header.key] }} 
-              </a>
-            </td>
+      <ng-container *ngIf="tableData.length > 0;else noData">
+        <tr *ngFor="let item of tableData"
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:cursor-pointer hover:bg-bg dark:hover:bg-gray-600">
+          <ng-container *ngFor="let header of tableHeaders">
+            <ng-container [ngSwitch]="header.img">
+              <td *ngSwitchCase="true" class="px-6 py-4">
+                <img class="w-10 h-10 rounded-full" src="{{item[header.key]}}" alt="{{item[header.key]}}">
+              </td>
+              <td *ngSwitchCase="false" class="px-6 py-4">
+                {{ item[header.key] }}
+              </td>
+              <td *ngSwitchDefault class="px-6 py-4">
+                <a [routerLink]="item.id" class="text-blue-600 hover:underline dark:text-blue-500">
+                  {{ item[header.key] }}
+                </a>
+              </td>
+            </ng-container>
           </ng-container>
-        </ng-container>
+        </tr>
+      </ng-container>
+    <ng-template #noData>
+      <tr>
+          <td colspan="{{tableHeaders.length}}">
+          <div
+            class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg border border-error dark:bg-gray-800 dark:text-red-400"
+            role="alert">
+            <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+            </svg>
+            <span class="sr-only">Info</span>
+            <div>
+              <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+            </div>
+          </div>
+          </td>
       </tr>
+    </ng-template>
     </tbody>
   </table>
 </div>
