@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap')
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+@layer utilities 
+  .animation-delay-2000
+    animation-delay:2s
+  .animation-delay-4000
+    animation-delay:4s
+
+body
+  font-family: 'Almarai', sans-serif
+  background-color: #f8f8f8
+  text-align: right
+svg
+  width: 1em
+  height: 1em
+  display: inline-block
+  cursor: pointer
+a 
+  cursor: pointer
+::selection
+  color: white
+  background: gray
+
+p 
+  font-weight:600
+
+*
+  //outline: 1px red dotted
+  scrollbar-width: thin
+  scrollbar-color: gray white
+
+  &::-webkit-scrollbar
+    width: 5px
+
+  &::-webkit-scrollbar-track
+    background: white
+
+  &::-webkit-scrollbar-thumb
+    background-color: gray
+    border-radius: 20px
+    border: 2px solid white
