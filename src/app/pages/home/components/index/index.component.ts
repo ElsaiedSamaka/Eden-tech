@@ -63,29 +63,16 @@ export class IndexComponent implements OnInit {
   }
 
   onGoTo(page: number): void {
-    console.log(`Page changed to ${page}`);
     this.page = page;
     this.getMovies(page, this.perPage);
   }
 
   public onNext(page: number): void {
-    // if (this.currentPage === this.totalPages) return;
-    // if (this.currentPage < this.totalPages) {
-    //   this.currentPage++;
-    //   this.usersToDisplay = this.paginate(this.currentPage, this.perPage);
-    // }
     this.getMovies(page, this.perPage);
-    console.log('next', page);
   }
 
   public onPrevious(page: number): void {
-    console.log('previous', page);
     this.getMovies(page, this.perPage);
-    // if (this.currentPage === 1) return;
-    // if (this.currentPage > 1) {
-    //   this.currentPage--;
-    //   this.usersToDisplay = this.paginate(this.currentPage, this.perPage);
-    // }
   }
 
   public onPerPageChange(perPage: number): void {

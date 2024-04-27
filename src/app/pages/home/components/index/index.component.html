@@ -9,10 +9,8 @@
       Submit
     </button>
   </form>
-  <section id="movies-table" class="my-10">
-<div class="relative">
+  <section id="movies-table" class="my-10 h-full">
   <app-data-table [tableHeaders]="tableHeaders" [tableData]="moviesData" [loading]="isDataLoading" (handleGoTo)="onGoTo($event)" (handleNext)="onNext($event)" (handlePrevious)="onPrevious($event)" (handlePerPageChange)="onPerPageChange($event)"></app-data-table>
-</div>
 
   </section>
  </div>

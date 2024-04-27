@@ -24,7 +24,7 @@ export class TableFooterComponent implements OnInit, OnChanges {
   }
   ngOnChanges() {
    this.subscribeToMoviesCount();
-    const totalPages = Math.ceil(this.totalItems / 5);
+    const totalPages = Math.ceil(this.totalItems / this.perPage);
     this.totalPages = totalPages;
     this.pages = this.getPages(this.currentPage, this.totalPages);
   }
@@ -69,6 +69,7 @@ export class TableFooterComponent implements OnInit, OnChanges {
   }
 
   public onPerPageChange(perPage: number): void {
+    this.perPage = perPage;
     this.perPageChange.emit(perPage);
   }
 }
