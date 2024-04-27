@@ -1,44 +1,58 @@
-<nav class="flex justify-center mt-10" aria-label="Page navigation example">
-  <ul class="flex items-center -space-x-px h-10 text-sm">
+<nav class="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4" aria-label="Table navigation">
+<div class="relative group">
+  <button aria-haspopup="listbox" aria-labelledby="select-label"
+    class="flex cursor-pointer items-center border-2 border-black px-3 py-1 font-base shadow-base transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none">
+    <div class="mx-auto flex items-center">
+      <span class="mx-2 text-gray-800 dark:text-white">{{perPage}}</span>
+      <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+        width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+      </svg>
+    </div>
+  </button>
+  <div class="absolute left-0 top-11 opacity-0 invisible border-1 border-black font-base transition-all 
+           group-hover:opacity-100 group-hover:visible">
+    <!-- Content -->
+    <button (click)="onPerPageChange(10)" class="block w-[4rem] border-2 border-black px-4 py-1 hover:bg-mainAccent">10</button>
+    <button (click)="onPerPageChange(15)" class="block w-[4rem] border-2 border-black px-4 py-1 hover:bg-mainAccent">15</button>
+    <button (click)="onPerPageChange(20)" class="block w-[4rem] border-2 border-black px-4 py-1 hover:bg-mainAccent">20</button>
+  </div>
+</div>
+ 
+  <ul class="inline-flex items-stretch -space-x-px">
     <li>
-      <a
-        class="flex items-center justify-center px-3 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+      <a [ngClass]="{'disabled': (currentPage <= 1)}" (click)="onPrevious()"
+        class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-3xl border border-gray-300  disabled:cursor-not-allowed">
         <span class="sr-only">Previous</span>
-        <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-          viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M5 1 1 5l4 4" />
+        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+            clip-rule="evenodd" />
         </svg>
       </a>
     </li>
+    <ng-container *ngFor="let page of pages; index as i">
+      <li *ngIf="page !== -1; else more">
+        <a (click)="onGoTo(page)" [ngClass]="page === currentPage? 'active' : ''"
+          class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 active:bg-gray-400">{{page}}</a>
+      </li>
+      <ng-template #more>
+        <li>
+          <a
+            class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 :bg-gray-800 :border-gray-700 :text-gray-400 :hover:bg-gray-700 :hover:text-white">...</a>
+        </li>
+      </ng-template>
+    </ng-container>
     <li>
-      <a
-        class="bg-main flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-    </li>
-    <li>
-      <a
-        class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-    </li>
-    <li>
-      <a aria-current="page"
-        class="z-10 flex items-center justify-center px-3 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-    </li>
-    <li>
-      <a
-        class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-    </li>
-    <li>
-      <a
-        class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-    </li>
-    <li>
-      <a
-        class="flex items-center justify-center px-3 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+      <a [ngClass]="{'disabled': (currentPage === totalPages )}" (click)="onNext()"
+        class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-3xl border border-gray-300 disabled:cursor-not-allowed">
         <span class="sr-only">Next</span>
-        <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-          viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="m1 9 4-4-4-4" />
+        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clip-rule="evenodd" />
         </svg>
       </a>
     </li>

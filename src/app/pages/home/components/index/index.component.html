@@ -1,16 +1,17 @@
 <div class="flex items-center justify-center overflow-hidden h-screen p-10">
  <div class="p-5 border border-dashed rounded-base w-full h-full">
   <h1 class="text-3xl font-heading text-center my-5">Simple Movie Directory</h1>
-  <form class="flex w-min items-center rounded-base border-2 border-black font-base shadow-base mx-auto" role="form">
-    <input class="min-w-[60ch] rounded-base p-[10px] outline-none" type="text" name="title" id="title" placeholder="monvie title" />
-    <button class="rounded-e-[5px] border-l-2 border-black bg-main p-[10px] px-5" type="submit"
+  <form class="inline-flex w-full justify-between items-center rounded-base border-2 border-black font-base shadow-base" role="form">
+    <input class="w-full rounded-base p-[10px] outline-none" type="text" name="title" id="title" placeholder="monvie title" />
+    <button class="
+     rounded-e-[5px] border-l-2 border-black bg-main p-[10px] px-5" type="submit"
       aria-label="Submit Newsletter">
       Submit
     </button>
   </form>
   <section id="movies-table" class="my-10">
-<div class="relative overflow-x-auto sm:rounded-lg">
-  <app-data-table [tableHeaders]="tableHeaders" [tableData]="moviesData"></app-data-table>
+<div class="relative">
+  <app-data-table [tableHeaders]="tableHeaders" [tableData]="moviesData" [loading]="isDataLoading" (handleGoTo)="onGoTo($event)" (handleNext)="onNext($event)" (handlePrevious)="onPrevious($event)" (handlePerPageChange)="onPerPageChange($event)"></app-data-table>
 </div>
 
   </section>
