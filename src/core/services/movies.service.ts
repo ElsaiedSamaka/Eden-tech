@@ -1,36 +1,59 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { ApiService } from './api.service';
+import { EnvironmentService } from './environment.service';
 
-const API_KEY = '4680a5e8';
 @Injectable({
   providedIn: 'root',
 })
 export class MoviesService {
+  private readonly API_KEY = this.env.apiKey;
+
   movies$ = new BehaviorSubject<any[]>([]);
   moviesCount$ = new BehaviorSubject<number>(0);
-  constructor(private apiService: ApiService) {}
 
-  getAll(_page: number = 1, _per_page: number = 5,term:string=''): Observable<any[]> {
-    return this.apiService.get(`/movies/?q=${term}&_page=${_page}&_limit=${_per_page}&apiKey=${API_KEY}`).pipe(
+  constructor(private apiService: ApiService, private env: EnvironmentService) {}
+
+  // Fetch movies with optional pagination and search term
+  getAll(
+    page: number = 1,
+    perPage: number = 5,
+    term: string = ''
+  ): Observable<any[]> {
+    const url = `/movies/?q=${term}&_page=${page}&_limit=${perPage}&apiKey=${this.API_KEY}`;
+    return this.apiService.get(url).pipe(
       tap((res) => {
         this.movies$.next(res);
       }),
       catchError((err) => {
-        // handle error and return a more specific error message
-        const errorMessage = err?.error?.message ?? 'An error occurred.';
+        const errorMessage = this.handleError(err);
         return throwError(errorMessage);
       })
     );
   }
+
+  // Fetch movie by ID
   getById(id: string): Observable<any> {
-    return this.apiService.get(`/movies/${id}/?i=${id}&apiKey=${API_KEY}`);
+    const url = `/movies/${id}/?i=${id}&apiKey=${this.API_KEY}`;
+    return this.apiService.get(url);
   }
-  getCount(): Observable<any>{
-    return this.apiService.get('/movies').pipe(
-      tap((res) => {
+
+  // Fetch total count of movies
+  getCount(): Observable<any> {
+    const url = '/movies';
+    return this.apiService.get(url).pipe(
+      tap((res: any[]) => {
         this.moviesCount$.next(res.length);
       })
-    )
+    );
+  }
+
+  // Handle errors and return specific error messages
+  private handleError(err: any): string {
+    if (err?.error?.status === 404) {
+      return 'Movie not found.';
+    }
+    return 'An error occurred while fetching movies.';
   }
 }
