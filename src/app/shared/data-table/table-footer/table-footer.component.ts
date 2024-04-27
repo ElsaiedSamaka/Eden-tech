@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Inject, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { MoviesService } from 'src/core/services/movies.service';
 
 @Component({
@@ -6,7 +7,7 @@ import { MoviesService } from 'src/core/services/movies.service';
   templateUrl: './table-footer.component.html',
   styleUrls: ['./table-footer.component.css'],
 })
-export class TableFooterComponent implements OnInit, OnChanges {
+export class TableFooterComponent implements OnChanges, OnDestroy {
   @Input() tableData: any[] = [];
   @Input() currentPage: number = 1;
   @Output() goTo: EventEmitter<number> = new EventEmitter<number>();
@@ -18,26 +19,50 @@ export class TableFooterComponent implements OnInit, OnChanges {
   pages: number[] = [];
   perPage: number = 5;
 
+  private unsubscribe$: Subject<void> = new Subject<void>();
   constructor(private moviesService: MoviesService) {
-    this.getCount();
+    this.fetchCount();
   }
   ngOnChanges() {
     this.subscribeToMoviesCount();
-    const totalPages = Math.ceil(this.totalItems / this.perPage);
-    this.totalPages = totalPages;
+    this.calculateTotalPages();
+    this.updatePages();
+  }
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+  private subscribeToMoviesCount() {
+    this.moviesService.moviesCount$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((res: number) => {
+        this.totalItems = res;
+        this.calculateTotalPages();
+        this.updatePages();
+      });
+  }
+
+  private fetchCount() {
+    this.moviesService
+      .getCount()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+        (res: number) => {
+          this.totalItems = res;
+          this.calculateTotalPages();
+          this.updatePages();
+        },
+        (error: any) => {
+          console.error('Failed to fetch movie count:', error);
+        }
+      );
+  }
+  private calculateTotalPages() {
+    this.totalPages = Math.ceil(this.totalItems / this.perPage);
+  }
+
+  private updatePages() {
     this.pages = this.getPages(this.currentPage, this.totalPages);
-  }
-  ngOnInit() {}
-  subscribeToMoviesCount() {
-    this.moviesService.moviesCount$.subscribe((res) => {
-      this.totalItems = res;
-      const totalPages = Math.ceil(this.totalItems / this.perPage);
-      this.totalPages = totalPages;
-      this.pages = this.getPages(this.currentPage, this.totalPages);
-    });
-  }
-  getCount() {
-    this.moviesService.getCount().subscribe();
   }
   public onGoTo(page: number): void {
     if (page < 1 || page > this.totalPages) {
@@ -70,6 +95,8 @@ export class TableFooterComponent implements OnInit, OnChanges {
 
   public onPerPageChange(perPage: number): void {
     this.perPage = perPage;
+    this.calculateTotalPages();
+    this.updatePages();
     this.perPageChange.emit(perPage);
   }
 }
