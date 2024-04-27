@@ -100,7 +100,6 @@ export class IndexComponent implements OnInit {
     this.getMovies(this.page, perPage);
   }
   private handleError(error: any): void {
-    console.error('Error:', error);
     this.showToastMessage('error', 'An error occurred while fetching data');
   }
   private showToastMessage(type: string, message: string): void {
