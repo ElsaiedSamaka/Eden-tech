@@ -23,7 +23,6 @@ export class InputComponent implements OnInit {
   @Input() tabindex: number = 0;
   @Input() size: number = 50;
   @Input() title: string = '';
-  
 
   showErrors() {
     const { dirty, touched, errors } = this.control;

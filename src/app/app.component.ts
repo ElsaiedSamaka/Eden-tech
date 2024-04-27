@@ -9,11 +9,8 @@ import { LoadingService } from './shared/services/loading.service';
 })
 export class AppComponent implements OnInit {
   loading$: Observable<boolean>;
-  constructor(
-    private loadingService: LoadingService,
-  ) {
+  constructor(private loadingService: LoadingService) {
     this.loading$ = this.loadingService.loading$;
   }
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

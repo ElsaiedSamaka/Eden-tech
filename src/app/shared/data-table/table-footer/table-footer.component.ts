@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { MoviesService } from 'src/core/services/movies.service';
 
@@ -47,14 +55,14 @@ export class TableFooterComponent implements OnChanges, OnDestroy {
       .getCount()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
-        (res: number) => {
+        (res: any) => {
           this.totalItems = res;
           this.calculateTotalPages();
           this.updatePages();
         },
         (error: any) => {
           console.error('Failed to fetch movie count:', error);
-        }
+        },
       );
   }
   private calculateTotalPages() {

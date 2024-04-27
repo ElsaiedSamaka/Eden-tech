@@ -14,8 +14,8 @@ import { FormsModule } from '@angular/forms';
     ViewsModule,
     SharedModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
   ],
-  declarations: [IndexComponent,NotFoundComponent,DetailedComponent],
+  declarations: [IndexComponent, NotFoundComponent, DetailedComponent],
 })
-export class HomeModule { }
+export class HomeModule {}

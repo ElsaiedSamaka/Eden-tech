@@ -12,7 +12,10 @@ import { Sort } from '../sort';
 })
 export class SortDirective {
   @Input() appSort: any = null;
-  constructor(private renderer: Renderer2, private targetElem: ElementRef) {}
+  constructor(
+    private renderer: Renderer2,
+    private targetElem: ElementRef,
+  ) {}
 
   @HostListener('click')
   sortData() {

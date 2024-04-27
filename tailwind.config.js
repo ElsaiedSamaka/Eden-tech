@@ -26,7 +26,7 @@ module.exports = {
     colors: {
       bg: "#daf5f0",
       main: "#c4a1ff",
-      mainAccent: "#9e66ff", 
+      mainAccent: "#9e66ff",
       success: "#00ff00",
       error: "#ff0000",
       warning: "#ffff00",

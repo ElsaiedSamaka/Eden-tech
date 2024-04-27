@@ -9,7 +9,7 @@ import { catchError, EMPTY, of } from 'rxjs';
 export class MovieResolverService {
   constructor(
     private moviesService: MoviesService,
-    private router: Router
+    private router: Router,
   ) {}
   resolve(route: ActivatedRouteSnapshot) {
     const id = route.paramMap.get('id') || '';
@@ -18,7 +18,7 @@ export class MovieResolverService {
         console.log(err);
         this.router.navigateByUrl('/not-found');
         return of(null);
-      })
+      }),
     );
   }
 }

@@ -13,21 +13,21 @@ export class DataTableComponent implements OnInit {
   @Output() handleGoTo: EventEmitter<number> = new EventEmitter<number>();
   @Output() handleNext: EventEmitter<number> = new EventEmitter<number>();
   @Output() handlePrevious: EventEmitter<number> = new EventEmitter<number>();
-  @Output() handlePerPageChange: EventEmitter<number> = new EventEmitter<number>();
+  @Output() handlePerPageChange: EventEmitter<number> =
+    new EventEmitter<number>();
   constructor() {}
 
-  ngOnInit() { }
-  
+  ngOnInit() {}
 
   public onGoTo(page: number): void {
     this.handleGoTo.emit(page);
   }
   public onNext(page: number): void {
-     this.currentPage ++;
+    this.currentPage++;
     this.handleNext.emit(this.currentPage);
   }
   public onPrevious(page: number): void {
-     this.currentPage --;
+    this.currentPage--;
     this.handlePrevious.emit(this.currentPage);
   }
   public onPerPageChange(page: number): void {

@@ -1,6 +1,9 @@
 # Angular Movies Simple Task [Eden-Tech]
+
 ## Simple Movies Directory
+
 ### Overview
+
 Your task is to develop a simple movies directory. The idea is that user can search for a film by name and view selected movie summary.
 Movie information would be collected from a public movies database API called OMDb.
 Functional Requirements
@@ -11,6 +14,7 @@ osearch results should show the movie poster as thumbnail.
 Users should be able to view the details for one of the movies from the search results.
 
 ### Technical Details
+
 Check the wireframe at the bottom of the document
 Use https://www.omdbapi.com/ as your backend.
 oRegister for free api key through https://www.omdbapi.com/apikey.aspx
@@ -19,12 +23,12 @@ oTo search for movies by title, use https://www.omdbapi.com/?s=<SEARCH_KEYWORD>&
 oTo view a movie details, use https://www.omdbapi.com/?i=<IMDB_ID>&apikey=<API_KEY>
 IMDB_ID is returned in the search API response for each movie.
 
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
 ## Development server
-*1* Run `json-server --watch src\db\db.json` for a backend server. <br/>
-*2* Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+_1_ Run `json-server --watch src\db\db.json` for a backend server. <br/>
+_2_ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 

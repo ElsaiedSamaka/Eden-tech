@@ -11,7 +11,7 @@ import { TableFooterComponent } from './data-table/table-footer/table-footer.com
 import { MyCommonModule } from 'src/utils/directives/my-common.module';
 
 @NgModule({
-  imports: [CommonModule,MyCommonModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, MyCommonModule, RouterModule, ReactiveFormsModule],
   declarations: [
     InputComponent,
     SortIconComponent,
