@@ -2,8 +2,14 @@
  <div class="p-5 border border-dashed rounded-base w-full h-full">
   <h1 class="text-3xl font-heading text-center my-5">Simple Movie Directory</h1>
   <form class="inline-flex w-full justify-between items-center rounded-base border-2 border-black font-base shadow-base" role="form">
-    <input class="w-full rounded-base p-[10px] outline-none" type="text" name="title" id="title" placeholder="monvie title" />
-    <button class="
+    <input [(ngModel)]="movieTitle" type="search" class="w-full rounded-base p-[10px] outline-none" type="text" name="title" id="title" placeholder="monvie title" />
+    <svg *ngIf="movieTitle.length>0" (click)="clear()" class="w-6 h-6 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+      height="24" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    </svg>
+
+    <button (click)="search()" class="
      rounded-e-[5px] border-l-2 border-black bg-main p-[10px] px-5" type="submit"
       aria-label="Submit Newsletter">
       Submit

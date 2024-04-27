@@ -17,24 +17,24 @@ export class TableFooterComponent implements OnInit, OnChanges {
   totalItems: number = 0;
   pages: number[] = [];
   perPage: number = 5;
-  
 
   constructor(private moviesService: MoviesService) {
-    this.getCount()
+    this.getCount();
   }
   ngOnChanges() {
-   this.subscribeToMoviesCount();
+    this.subscribeToMoviesCount();
     const totalPages = Math.ceil(this.totalItems / this.perPage);
     this.totalPages = totalPages;
     this.pages = this.getPages(this.currentPage, this.totalPages);
   }
-  ngOnInit() {
-  
-  }
+  ngOnInit() {}
   subscribeToMoviesCount() {
-     this.moviesService.moviesCount$.subscribe((res) => {
-       this.totalItems = res;
-     });
+    this.moviesService.moviesCount$.subscribe((res) => {
+      this.totalItems = res;
+      const totalPages = Math.ceil(this.totalItems / this.perPage);
+      this.totalPages = totalPages;
+      this.pages = this.getPages(this.currentPage, this.totalPages);
+    });
   }
   getCount() {
     this.moviesService.getCount().subscribe();

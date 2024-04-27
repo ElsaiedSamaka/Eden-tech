@@ -49,9 +49,10 @@ export class IndexComponent implements OnInit {
   }
 
   search(): void {
-    this.moviesService.search(this.movieTitle).subscribe({
+    this.moviesService.getAll(this.page,this.perPage,this.movieTitle).subscribe({
       next: (response: any) => {
-        console.log('response [search]', response);
+        this.movieTitle.length > 0 && this.moviesService.moviesCount$.next(response.length);
+        this.moviesData = response;
       },
       error: (err) => {
         console.error('error', err);
@@ -60,6 +61,12 @@ export class IndexComponent implements OnInit {
         console.log('finalize');
       },
     });
+  }
+
+  clear(): void {
+    this.movieTitle = '';
+    this.getMovies();
+    this.moviesService.getCount().subscribe();
   }
 
   onGoTo(page: number): void {

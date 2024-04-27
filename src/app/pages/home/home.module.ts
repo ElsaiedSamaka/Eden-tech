@@ -6,13 +6,15 @@ import { ViewsModule } from './views/views.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DetailedComponent } from './components/detailed/detailed.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     ViewsModule,
     SharedModule,
-    HomeRoutingModule 
+    HomeRoutingModule,
+    FormsModule
   ],
   declarations: [IndexComponent,NotFoundComponent,DetailedComponent],
 })

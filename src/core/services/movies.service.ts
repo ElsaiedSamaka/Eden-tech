@@ -11,9 +11,8 @@ export class MoviesService {
   moviesCount$ = new BehaviorSubject<number>(0);
   constructor(private apiService: ApiService) {}
 
-  getAll(_page: number = 1, _per_page: number = 5): Observable<any[]> {
-    console.log('page', _page, 'per_page', _per_page);
-    return this.apiService.get(`/movies/?_page=${_page}&_limit=${_per_page}&apiKey=${API_KEY}`).pipe(
+  getAll(_page: number = 1, _per_page: number = 5,term:string=''): Observable<any[]> {
+    return this.apiService.get(`/movies/?q=${term}&_page=${_page}&_limit=${_per_page}&apiKey=${API_KEY}`).pipe(
       tap((res) => {
         this.movies$.next(res);
       }),
@@ -33,15 +32,5 @@ export class MoviesService {
         this.moviesCount$.next(res.length);
       })
     )
-  }
-  search(term: any): Observable<any[]> {
-    // TODO: make sure the backend is ready for this
-    return this.apiService.get(`/api/products?name=${term}`).pipe(
-      tap((res: any) => {
-        console.log('MoviesSerivce [search]: res', res);
-        const movies = res.movies;
-        this.movies$.next(movies);
-      })
-    );
   }
 }
